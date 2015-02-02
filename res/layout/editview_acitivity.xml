@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    xmlns:tools="http://schemas.android.com/tools"  
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent"  
+    android:orientation="horizontal"  
+    tools:context=".MainActivity" >  
+  
+    <LinearLayout  
+        android:id="@+id/menu"  
+        android:layout_width="fill_parent"  
+        android:layout_height="fill_parent"
+        android:background="#00AEF6"
+        android:orientation="vertical">
+        <TextView
+            android:id = "@+id/layout_text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LinearLayout_Menu"
+            />
+    </LinearLayout>
+  
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="#D1D4CA">
+        <RelativeLayout 
+            android:id="@+id/content_bar"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:orientation="vertical"
+        	android:background="#E2E5DB"
+        	android:layout_alignParentLeft="true"
+        	android:layout_alignParentRight="true"
+        	android:layout_alignParentTop="true"
+        	android:layout_marginBottom="10dip"
+            >
+        <ImageButton
+            android:id = "@+id/edit_menu_btn"
+            android:background="@drawable/menu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:layout_marginBottom="10dip"
+            />
+        <ImageButton 
+            android:id = "@+id/edit_add_btn"
+            android:background="@drawable/add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="10dip"
+            android:layout_marginBottom="10dip"
+            />
+        </RelativeLayout>
+    </RelativeLayout>  
+  
+</LinearLayout>

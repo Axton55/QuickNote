@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    xmlns:tools="http://schemas.android.com/tools"  
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent"  
+    android:orientation="horizontal"  
+    tools:context=".MainActivity" >  
+  
+    <LinearLayout  
+        android:id="@+id/menu"  
+        android:layout_width="fill_parent"  
+        android:layout_height="fill_parent"
+        android:background="#00AEF6"
+        android:orientation="vertical">
+        <TextView
+            android:id = "@+id/layout_text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LinearLayout_Menu"
+            />
+    </LinearLayout>
+  
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="#D1D4CA">
+        <LinearLayout
+            android:id="@+id/content_bar"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:background="#E2E5DB"
+        	android:layout_alignParentTop="true"
+        	android:padding="10dp"
+        	
+            >
+        <ImageButton
+            android:id = "@+id/layout_menu_btn"
+            android:background="@drawable/menu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity = "left"
+            />
+        <ImageButton 
+            android:id = "@+id/layout_add_btn"
+            android:background="@drawable/add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            />
+        </LinearLayout>
+    </RelativeLayout>  
+  
+</LinearLayout>
