@@ -19,37 +19,23 @@
             />
     </LinearLayout>
   
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/content"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
         android:background="#D1D4CA">
         <LinearLayout
-            android:id="@+id/content_bar"
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="horizontal"
-        	android:background="#E2E5DB"
-        	android:layout_alignParentTop="true"
-        	android:padding="10dp"
-        	
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
             >
-        <ImageButton
-            android:id = "@+id/layout_menu_btn"
-            android:background="@drawable/menu_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity = "left"
-            />
-        <ImageButton 
-            android:id = "@+id/layout_add_btn"
-            android:background="@drawable/add_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            />
+            <ListView
+                android:id = "@+id/mainview_lv"
+            	android:layout_width="fill_parent"
+            	android:layout_height = "fill_parent"
+                />
         </LinearLayout>
-    </RelativeLayout>  
+    </LinearLayout>  
   
 </LinearLayout>

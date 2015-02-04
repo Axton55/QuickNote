@@ -21,9 +21,12 @@ import android.view.VelocityTracker;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 
 
@@ -54,39 +57,49 @@ public class MainView extends Activity implements OnTouchListener {
     //menu当前是显示还是隐藏。只有完全显示或隐藏menu时才会更改此值，滑动过程中此值无效。 
     private boolean isMenuVisible = false;  
     //用于计算手指滑动的速度。  
-    private VelocityTracker mVelocityTracker;  
-  
+    private VelocityTracker mVelocityTracker; 
+    
+    //创建一个listview所需要的变量
+    private ListView main_lv;
+    private ArrayAdapter<String> mainViewLV_Adapter;
+    private SimpleAdapter mainViewLV_SimpleAdapter;
+    
+    String[] date = {"1985-05-04","1985-05-04","1985-05-04","1985-05-04","1985-05-04","1985-05-04"};;
+    String[] detail;
+    
     @Override  
     protected void onCreate(Bundle savedInstanceState) {  
         super.onCreate(savedInstanceState);  
         setContentView(R.layout.mainview_activity);  
         initValues();  
-        content.setOnTouchListener(this);  
-        //定义两个按钮
-        ImageButton addButton = (ImageButton)findViewById(R.id.layout_add_btn);
-        ImageButton menuButton = (ImageButton)findViewById(R.id.layout_menu_btn);
+        content.setOnTouchListener(this);
+        
+        main_lv = (ListView) findViewById(R.id.mainview_lv);
+        //New a adapter
+        mainViewLV_Adapter = new ArrayAdapter<String>(this, R.layout.listview_item_layout, date);
+        main_lv.setAdapter(mainViewLV_Adapter);
         //定义两个按钮的监听器
-        addButton.setOnClickListener(new Button.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				Intent intent = new Intent(MainView.this, EditView.class);
-				startActivity(intent);
-			}
-        });
-        menuButton.setOnClickListener(new Button.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				// 如果isMenuVisible是false，那么点击按钮滑动到Menu界面，如果为true，则点击返回到Content界面
-				if(!isMenuVisible){
-					scrollToMenu();
-					isMenuVisible = true;
-				}
-				else{
-					scrollToContent();
-					isMenuVisible = false;
-				}
-			}
-        });
+//        addButton.setOnClickListener(new Button.OnClickListener(){
+//			@Override
+//			public void onClick(View arg0) {
+//				Intent intent = new Intent(MainView.this, EditView.class);
+//				startActivity(intent);
+//			}
+//        });
+//        menuButton.setOnClickListener(new Button.OnClickListener(){
+//			@Override
+//			public void onClick(View arg0) {
+//				// 如果isMenuVisible是false，那么点击按钮滑动到Menu界面，如果为true，则点击返回到Content界面
+//				if(!isMenuVisible){
+//					scrollToMenu();
+//					isMenuVisible = true;
+//				}
+//				else{
+//					scrollToContent();
+//					isMenuVisible = false;
+//				}
+//			}
+//        });
     }  
   
     /** 
